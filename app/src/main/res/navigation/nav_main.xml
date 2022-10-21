@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.hasandeniz.odev7.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/action_anasayfaFragment_to_isDetayFragment"
+            app:destination="@id/isDetayFragment" />
+        <action
+            android:id="@+id/action_anasayfaFragment_to_isKayitFragment"
+            app:destination="@id/isKayitFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/isKayitFragment"
+        android:name="com.hasandeniz.odev7.ui.fragment.IsKayitFragment"
+        android:label="fragment_is_kayit"
+        tools:layout="@layout/fragment_is_kayit" >
+        <action
+            android:id="@+id/action_isKayitFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/isDetayFragment"
+        android:name="com.hasandeniz.odev7.ui.fragment.IsDetayFragment"
+        android:label="fragment_is_detay"
+        tools:layout="@layout/fragment_is_detay" >
+        <argument
+            android:name="yapilacakIs"
+            app:argType="com.hasandeniz.odev7.data.entity.YapilacakIs" />
+        <action
+            android:id="@+id/action_isDetayFragment_to_anasayfaFragment"
+            app:destination="@id/anasayfaFragment" />
+    </fragment>
+</navigation>
